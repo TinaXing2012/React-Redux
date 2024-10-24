@@ -1,6 +1,7 @@
 import store from './store';
 import { createOrderPizzaAction, createRestockPizzaAction } from './pizza-action';
 import { createOrderChickenAction, createRestockChickenAction } from './chicken-action';
+import { createUpdateStreetAction } from './user-action';
 
 
 // 4. test - get state, dispatch actions
@@ -10,12 +11,7 @@ const unsubscribe = store.subscribe(() => {
     console.log('updated state: ', store.getState());
 });
 
-store.dispatch(createOrderPizzaAction());
-store.dispatch(createRestockPizzaAction(2));
-
-store.dispatch(createOrderChickenAction());
-store.dispatch(createRestockChickenAction(7));
-store.dispatch(createOrderChickenAction());
+store.dispatch(createUpdateStreetAction('999 1st St'));
 
 unsubscribe();
 
