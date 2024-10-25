@@ -9,11 +9,11 @@ const unsubscribe = store.subscribe(() => {
 });
 
 store.dispatch(pizzaActions.order());
-// store.dispatch(pizzaActions.order());
-// store.dispatch(pizzaActions.restock(5));
+store.dispatch(pizzaActions.order());
+store.dispatch(pizzaActions.restock(5));
 
-// store.dispatch(chickenActions.order());
-// store.dispatch(chickenActions.restock(3));
+store.dispatch(chickenActions.order());
+store.dispatch(chickenActions.restock(3));
 
 store.dispatch
 

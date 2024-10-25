@@ -1,5 +1,4 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import * as pizzaActions from "../pizza/pizzaSlice";
 
 const initialState = {
     numOfChicken: 20
@@ -15,11 +14,6 @@ const chickenSlice = createSlice({
         restock(state, action: PayloadAction<number>) {
             state.numOfChicken += action.payload;
         }
-    },
-    extraReducers: builder => {
-        builder.addCase(pizzaActions.order, (state) => {
-            state.numOfChicken--;
-        });
     }
 });
 
