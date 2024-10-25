@@ -11,11 +11,11 @@ const unsubscribe = store.subscribe(() => {
 });
 
 store.dispatch(createOrderPizzaAction());
-store.dispatch(createRestockPizzaAction(2));
+// store.dispatch(createRestockPizzaAction(2));
 
-store.dispatch(createOrderChickenAction());
-store.dispatch(createRestockChickenAction(7));
-store.dispatch(createOrderChickenAction());
+// store.dispatch(createOrderChickenAction());
+// store.dispatch(createRestockChickenAction(7));
+// store.dispatch(createOrderChickenAction());
 
 unsubscribe();
 
