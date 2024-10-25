@@ -1,14 +1,8 @@
-import { combineReducers, createStore, isAction } from "redux";
-import pizzaReducer from './pizza-reducer';
-import chickenReducer from './chicken-reducer';
-import userReducer from './user-reducer';
+import { applyMiddleware, createStore } from "redux";
+import reducer from "./user-reducer";
+import { thunk } from "redux-thunk";
 
-const combinedReducers = combineReducers({
-    pizza: pizzaReducer,
-    chicken: chickenReducer,
-    user: userReducer
-})
-
-const store = createStore(combinedReducers);
+// @ts-ignore
+const store = createStore(reducer, applyMiddleware(thunk));
 
 export default store;

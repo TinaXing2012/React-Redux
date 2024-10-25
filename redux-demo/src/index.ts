@@ -1,18 +1,12 @@
-import store from './store';
-import { createOrderPizzaAction, createRestockPizzaAction } from './pizza-action';
-import { createOrderChickenAction, createRestockChickenAction } from './chicken-action';
-import { createUpdateStreetAction } from './user-action';
+
+import store from "./store"
+import { createFetchUserAsyncAction, createFetchUserFailureAction, createFetchUserRequestAction, createFetchUserSuccessAction } from "./user-action";
 
 
-// 4. test - get state, dispatch actions
-console.log('initial state: ', store.getState());
+console.log('inital state: ', store.getState());
 
-const unsubscribe = store.subscribe(() => {
+store.subscribe(() => {
     console.log('updated state: ', store.getState());
 });
 
-store.dispatch(createUpdateStreetAction('999 1st St'));
-
-unsubscribe();
-
-
+store.dispatch(createFetchUserAsyncAction());
